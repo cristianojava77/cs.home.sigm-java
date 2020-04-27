@@ -1,0 +1,27 @@
+logging:
+  level:
+    rb.threema.cleanup: debug
+    rb.threema.cleanup.adapter.threema.service: debug
+    org.springframework.web: warn
+    org.springframework.ws: TRACE
+server:
+  port: 8080
+spring:
+  application:
+    name: threema-cleanup
+  datasource:
+    url: jdbc:h2:file:/home/developer/work/database/sigm/sigm
+    driverClassName: org.h2.Driver
+    username: sigm
+    password: sigm
+  h2:
+    console:
+      enabled: true
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+      fail-on-empty-beans: false
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop

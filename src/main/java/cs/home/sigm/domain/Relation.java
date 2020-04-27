@@ -1,0 +1,42 @@
+package cs.home.sigm.domain;
+
+import java.io.Serializable;
+
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.ManyToOne;
+import javax.persistence.MapsId;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class Relation implements Serializable {
+
+	private static final long serialVersionUID = 306339534621157444L;
+
+	@EmbeddedId
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+
+	@ManyToOne
+	@MapsId("person_id")
+	private Person person;
+
+	@ManyToOne
+	@MapsId("relative_id")
+	private Person relative;
+
+	private Relationship relationship;
+
+}
