@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapsId;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,12 +22,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "relation")
 public class Relation implements Serializable {
 
 	private static final long serialVersionUID = 306339534621157444L;
 
 	@EmbeddedId
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@ManyToOne
@@ -37,6 +39,6 @@ public class Relation implements Serializable {
 	@MapsId("relative_id")
 	private Person relative;
 
-	private Relationship relationship;
+	private Long relationshipcode;
 
 }

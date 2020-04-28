@@ -7,6 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
@@ -21,19 +23,20 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "person", indexes = { @Index(columnList = "name", name = "idx_person_name") })
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = -1926509930607287585L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Country country;
+	private Long countrycode;
 
-	private State state;
+	private Long maritalstatuscode;
 
-	private MaritalStatus maritalStatus;
+	private Long statecode;
 
 	@NotBlank(message = "Name is mandatory")
 	private String name;

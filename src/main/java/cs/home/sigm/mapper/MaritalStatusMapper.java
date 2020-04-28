@@ -14,8 +14,9 @@ public class MaritalStatusMapper {
 	public MaritalStatus map(MaritalStatusDTO request) {
 		// @formatter:off
 		return MaritalStatus.builder()
-				.description(request.getDescription())
 				.id(request.getId())
+				.code(request.getCode())
+				.language(request.getLanguage())
 				.title(request.getTitle())
 				.build();
 		// @formatter:on
@@ -32,8 +33,9 @@ public class MaritalStatusMapper {
 	public MaritalStatusDTO map(MaritalStatus domain) {
 		// @// @formatter:off
 		return MaritalStatusDTO.builder()
-				.description(domain.getDescription())
 				.id(domain.getId())
+				.code(domain.getCode())
+				.language(domain.getLanguage())
 				.title(domain.getTitle())
 				.build();
 		// @formatter:on

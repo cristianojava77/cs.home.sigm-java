@@ -17,13 +17,11 @@ public class StateDTO implements Serializable {
 
 	private Long id;
 
-	private Long idcountry;
+	private Long countrycode;
 
-	private String code;
+	private String abbreviation;
 
 	private String title;
-
-	private String description;
 
 	private Boolean active;
 

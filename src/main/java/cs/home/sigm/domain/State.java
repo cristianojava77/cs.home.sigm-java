@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
@@ -20,23 +21,22 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Table(name = "state")
 public class State implements Serializable {
 
 	private static final long serialVersionUID = 2065829407246890806L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private Country country;
+	@NotBlank(message = "Country Code is mandatory")
+	private Long countrycode;
 
-	@NotBlank(message = "State code is mandatory")
-	private String code;
+	private String abbreviation;
 
-	@NotBlank(message = "State title is mandatory")
+	@NotBlank(message = "Title is mandatory")
 	private String title;
-
-	private String description;
 
 	@Builder.Default
 	private Boolean active = true;

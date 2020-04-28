@@ -16,8 +16,8 @@ public class CountryMapper {
 		return Country.builder()
 				.active(request.getActive())
 				.code(request.getCode())
-				.description(request.getDescription())
 				.id(request.getId())
+				.language(request.getLanguage())
 				.title(request.getTitle())
 				.build();
 		// @formatter:on
@@ -36,8 +36,8 @@ public class CountryMapper {
 		return CountryDTO.builder()
 				.active(domain.getActive())
 				.code(domain.getCode())
-				.description(domain.getDescription())
 				.id(domain.getId())
+				.language(domain.getLanguage())
 				.title(domain.getTitle())
 				.build();
 		// @formatter:on

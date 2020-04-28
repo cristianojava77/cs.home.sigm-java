@@ -18,11 +18,11 @@ public class PersonDTO implements Serializable {
 
 	private Long id;
 
-	private Long idcountry;
+	private Long countrycode;
 
-	private Long idstate;
+	private Long maritalstatuscode;
 
-	private Long idmaritalstatus;
+	private Long statecode;
 
 	private String name;
 

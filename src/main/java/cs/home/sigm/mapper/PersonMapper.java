@@ -3,66 +3,28 @@ package cs.home.sigm.mapper;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.EntityNotFoundException;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import cs.home.sigm.adapter.domain.PersonDTO;
 import cs.home.sigm.domain.Person;
-import cs.home.sigm.repository.CountryRepository;
-import cs.home.sigm.repository.MaritalStatusRepository;
-import cs.home.sigm.repository.StateRepository;
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 public class PersonMapper {
 
-	@Autowired
-	private CountryRepository countryRepository;
-
-	@Autowired
-	private StateRepository stateRepository;
-
-	@Autowired
-	private MaritalStatusRepository maritalStatusRepository;
-
 	public Person map(PersonDTO request) {
 		// @formatter:off
-		Person result = Person.builder()
-				.dateBirth(request.getDatebirth())
-				.email(request.getEmail())
+		return Person.builder()
 				.id(request.getId())
+				.countrycode(request.getCountrycode())
+				.maritalstatuscode(request.getMaritalstatuscode())
+				.statecode(request.getStatecode())
 				.name(request.getName())
-				.number(request.getNumber())
+				.email(request.getEmail())
+				.dateBirth(request.getDatebirth())
 				.street(request.getStreet())
+				.number(request.getNumber())
 				.build();
 		// @formatter:on
-
-		if (request.getIdcountry() != null) {
-			try {
-				result.setCountry(countryRepository.getOne(request.getIdcountry()));
-			} catch (EntityNotFoundException e) {
-				log.error("Counld not find a country for ID {} on the request mapper.", request.getIdcountry(), e);
-			}
-		}
-		if (request.getIdmaritalstatus() != null) {
-			try {
-				result.setMaritalStatus(maritalStatusRepository.getOne(request.getIdmaritalstatus()));
-			} catch (EntityNotFoundException e) {
-				log.error("Counld not find a valid marital status for ID {} on the request mapper.", request.getIdmaritalstatus(), e);
-			}
-		}
-		if (request.getIdstate() != null) {
-			try {
-				result.setState(stateRepository.getOne(request.getIdstate()));
-			} catch (EntityNotFoundException e) {
-				log.error("Counld not find a state for ID {} on the request mapper.", request.getIdstate(), e);
-			}
-		}
-
-		return result;
 	}
 
 	public List<PersonDTO> mapResponse(List<Person> lst) {
@@ -76,15 +38,15 @@ public class PersonMapper {
 	public PersonDTO map(Person domain) {
 		// @// @formatter:off
 		return PersonDTO.builder()
-				.datebirth(domain.getDateBirth())
-				.email(domain.getEmail())
 				.id(domain.getId())
-				.idcountry(domain.getCountry() != null ? domain.getCountry().getId() : null)
-				.idmaritalstatus(domain.getMaritalStatus() != null ? domain.getMaritalStatus().getId() : null)
-				.idstate(domain.getState() != null ? domain.getState().getId() : null)
+				.countrycode(domain.getCountrycode())
+				.maritalstatuscode(domain.getMaritalstatuscode())
+				.statecode(domain.getStatecode())
 				.name(domain.getName())
-				.number(domain.getNumber())
+				.email(domain.getEmail())
+				.datebirth(domain.getDateBirth())
 				.street(domain.getStreet())
+				.number(domain.getNumber())
 				.build();
 		// @formatter:on
 	}

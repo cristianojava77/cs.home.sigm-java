@@ -14,9 +14,10 @@ public class RelationshipMapper {
 	public Relationship map(RelationshipDTO request) {
 		// @formatter:off
 		return Relationship.builder()
-				.description(request.getDescription())
 				.id(request.getId())
+				.code(request.getCode())
 				.title(request.getTitle())
+				.language(request.getLanguage())
 				.build();
 		// @formatter:on
 	}
@@ -32,9 +33,10 @@ public class RelationshipMapper {
 	public RelationshipDTO map(Relationship domain) {
 		// @// @formatter:off
 		return RelationshipDTO.builder()
-				.description(domain.getDescription())
 				.id(domain.getId())
+				.code(domain.getCode())
 				.title(domain.getTitle())
+				.language(domain.getLanguage())
 				.build();
 		// @formatter:on
 	}

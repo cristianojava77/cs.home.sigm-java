@@ -17,11 +17,11 @@ public class CountryDTO implements Serializable {
 
 	private Long id;
 
-	private String code;
+	private Long code;
 
 	private String title;
 
-	private String description;
+	private String language;
 
 	private Boolean active;
 

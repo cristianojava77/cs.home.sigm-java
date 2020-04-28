@@ -14,8 +14,9 @@ public class StateMapper {
 	public State map(StateDTO request) {
 		// @formatter:off
 		return State.builder()
-				.code(request.getCode())
-				.description(request.getDescription())
+				.abbreviation(request.getAbbreviation())
+				.active(request.getActive())
+				.countrycode(request.getCountrycode())
 				.id(request.getId())
 				.title(request.getTitle())
 				.build();
@@ -33,8 +34,9 @@ public class StateMapper {
 	public StateDTO map(State domain) {
 		// @// @formatter:off
 		return StateDTO.builder()
-				.code(domain.getCode())
-				.description(domain.getDescription())
+				.abbreviation(domain.getAbbreviation())
+				.active(domain.getActive())
+				.countrycode(domain.getCountrycode())
 				.id(domain.getId())
 				.title(domain.getTitle())
 				.build();

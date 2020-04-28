@@ -17,8 +17,10 @@ public class MaritalStatusDTO implements Serializable {
 
 	private Long id;
 
+	private Long code;
+
 	private String title;
 
-	private String description;
+	private String language;
 
 }

@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import cs.home.sigm.adapter.domain.CountryDTO;
 import cs.home.sigm.service.CountryService;
 
-@RequestMapping("/country")
 @RestController
+@RequestMapping("/country")
 public class CountryController {
 
 	@Autowired
