@@ -19,10 +19,17 @@ public class PersonMapper {
 				.maritalstatuscode(request.getMaritalstatuscode())
 				.statecode(request.getStatecode())
 				.name(request.getName())
-				.email(request.getEmail())
-				.dateBirth(request.getDatebirth())
+				.datebirth(request.getDatebirth())
 				.street(request.getStreet())
 				.number(request.getNumber())
+				.district(request.getDistrict())
+				.city(request.getCity())
+				.zipcode(request.getZipcode())
+				.phonemobile(request.getPhonemobile())
+				.phonehome(request.getPhonehome())
+				.phonework(request.getPhonework())
+				.emailpersonal(request.getEmailpersonal())
+				.emailwork(request.getEmailwork())
 				.build();
 		// @formatter:on
 	}
@@ -43,10 +50,17 @@ public class PersonMapper {
 				.maritalstatuscode(domain.getMaritalstatuscode())
 				.statecode(domain.getStatecode())
 				.name(domain.getName())
-				.email(domain.getEmail())
-				.datebirth(domain.getDateBirth())
+				.datebirth(domain.getDatebirth())
 				.street(domain.getStreet())
 				.number(domain.getNumber())
+				.district(domain.getDistrict())
+				.city(domain.getCity())
+				.zipcode(domain.getZipcode())
+				.phonemobile(domain.getPhonemobile())
+				.phonehome(domain.getPhonehome())
+				.phonework(domain.getPhonework())
+				.emailpersonal(domain.getEmailpersonal())
+				.emailwork(domain.getEmailwork())
 				.build();
 		// @formatter:on
 	}

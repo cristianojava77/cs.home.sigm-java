@@ -36,22 +36,22 @@ insert into maritalstatus (id, code, title, language) values
 
 insert into relationship (id, code, title, language) values
 (null, 1, 'Cônjuge', 'pt_BR'),
-(null, 1, 'Pai', 'pt_BR'),
-(null, 1, 'Mãe', 'pt_BR'),
-(null, 1, 'Irmão/Irmã', 'pt_BR'),
-(null, 1, 'Filho(a)', 'pt_BR'),
+(null, 2, 'Pai', 'pt_BR'),
+(null, 3, 'Mãe', 'pt_BR'),
+(null, 4, 'Irmão/Irmã', 'pt_BR'),
+(null, 5, 'Filho(a)', 'pt_BR'),
 
 (null, 1, 'Cónyuge', 'es_ES'),
-(null, 1, 'Padre', 'es_ES'),
-(null, 1, 'Madre', 'es_ES'),
-(null, 1, 'Hermano(a)', 'es_ES'),
-(null, 1, 'Hijo(a)', 'es_ES'),
+(null, 2, 'Padre', 'es_ES'),
+(null, 3, 'Madre', 'es_ES'),
+(null, 4, 'Hermano(a)', 'es_ES'),
+(null, 5, 'Hijo(a)', 'es_ES'),
 
 (null, 1, 'Spouse', 'en_US'),
-(null, 1, 'Father', 'en_US'),
-(null, 1, 'Mother', 'en_US'),
-(null, 1, 'Brother/Sister', 'en_US'),
-(null, 1, 'Son/Daughter', 'en_US');
+(null, 2, 'Father', 'en_US'),
+(null, 3, 'Mother', 'en_US'),
+(null, 4, 'Brother/Sister', 'en_US'),
+(null, 5, 'Son/Daughter', 'en_US');
 
 insert into state (id, countrycode, title, abbreviation) values
 (null, 1, 'Acre', 'AC'),

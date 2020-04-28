@@ -41,13 +41,27 @@ public class Person implements Serializable {
 	@NotBlank(message = "Name is mandatory")
 	private String name;
 
-	@NotBlank(message = "Email is mandatory")
-	private String email;
-
-	private Date dateBirth;
+	private Date datebirth;
 
 	private String street;
 
 	private String number;
+
+	private String district;
+
+	private String city;
+
+	private String zipcode;
+
+	private String phonemobile;
+
+	private String phonehome;
+
+	private String phonework;
+
+	@NotBlank(message = "Personal Email is mandatory")
+	private String emailpersonal;
+
+	private String emailwork;
 
 }

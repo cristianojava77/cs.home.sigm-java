@@ -15,29 +15,32 @@ import lombok.extern.slf4j.Slf4j;
 public class StateService {
 
 	@Autowired
-	private StateRepository stateRepository;
+	private StateRepository repository;
 
 	@Autowired
-	private StateMapper stateMapper;
+	private StateMapper mapper;
 
-	public List<StateDTO> getAll() {
-		log.info("Listing all entries.");
-		return stateMapper.mapResponse(stateRepository.findAll());
+	public List<StateDTO> getAll(Long countrycode) {
+		log.info("Listing all states for country code: {}.", countrycode);
+		if (countrycode != null) {
+			return mapper.mapResponse(repository.findAllByCountrycodeOrderByTitle(countrycode));
+		}
+		return mapper.mapResponse(repository.findAll());
 	}
 
 	public StateDTO getSingle(Long id) {
 		log.info("Loading a single entry: {}", id);
-		return stateMapper.map(stateRepository.getOne(id));
+		return mapper.map(repository.getOne(id));
 	}
 
 	public void saveSingle(StateDTO request) {
 		log.info("Saving a new entry based on request: {}", request);
-		stateRepository.save(stateMapper.map(request));
+		repository.save(mapper.map(request));
 	}
 
 	public void deleteSingle(Long id) {
 		log.info("Deleting the entry {}.", id);
-		stateRepository.deleteById(id);
+		repository.deleteById(id);
 	}
 
 }
