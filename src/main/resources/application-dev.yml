@@ -10,7 +10,7 @@ spring:
   application:
     name: threema-cleanup
   datasource:
-    url: jdbc:h2:file:/home/developer/work/database/sigm/sigm
+    url: jdbc:h2:file:~/work/database/sigm/sigm
     driverClassName: org.h2.Driver
     username: sigm
     password: sigm
