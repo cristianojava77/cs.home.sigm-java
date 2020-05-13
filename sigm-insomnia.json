@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2020-05-03T23:51:01.836Z",
+	"__export_date": "2020-05-13T17:49:05.306Z",
 	"__export_source": "insomnia.desktop.app:v5.16.6",
 	"resources": [
 		{
@@ -26,9 +26,30 @@
 		},
 		{
 			"_id": "jar_93ff9b72b4b74f7bbec5b047499b3c39",
-			"cookies": [],
+			"cookies": [
+				{
+					"creation": "2020-05-12T18:27:36.205Z",
+					"domain": "localhost",
+					"hostOnly": true,
+					"id": "796671344242752",
+					"key": "org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE",
+					"lastAccessed": "2020-05-12T18:28:50.259Z",
+					"path": "/",
+					"value": "en-US"
+				},
+				{
+					"creation": "2020-05-12T18:29:49.912Z",
+					"domain": "ca-vintra1-dev.br.bosch.com",
+					"hostOnly": true,
+					"id": "5905186368288611",
+					"key": "org.springframework.web.servlet.i18n.CookieLocaleResolver.LOCALE",
+					"lastAccessed": "2020-05-12T18:29:49.913Z",
+					"path": "/",
+					"value": "en-US"
+				}
+			],
 			"created": 1585738629361,
-			"modified": 1585738629361,
+			"modified": 1589308189913,
 			"name": "Default Jar",
 			"parentId": "wrk_b4f382b9931746ab929ecfe807501a3d",
 			"_type": "cookie_jar"
@@ -89,6 +110,32 @@
 			"_type": "request_group"
 		},
 		{
+			"_id": "env_5df5217931804fbea678ce65e5b78ba1",
+			"color": null,
+			"created": 1589308083420,
+			"data": {
+				"base_url": "http://localhost:8080"
+			},
+			"isPrivate": false,
+			"modified": 1589391819879,
+			"name": "development",
+			"parentId": "env_c03b5c0929b7419e8d4043c479cd2fe5",
+			"_type": "environment"
+		},
+		{
+			"_id": "env_a9c1893c205943b69db0bf95e5158169",
+			"color": null,
+			"created": 1589308140620,
+			"data": {
+				"base_url": "http://localhost:8080"
+			},
+			"isPrivate": false,
+			"modified": 1589391832681,
+			"name": "quality",
+			"parentId": "env_c03b5c0929b7419e8d4043c479cd2fe5",
+			"_type": "environment"
+		},
+		{
 			"_id": "req_b5475fa73dd349e98f3c6c85d51bb487",
 			"authentication": {},
 			"body": {
@@ -107,7 +154,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082597951,
 			"method": "POST",
-			"modified": 1588511367272,
+			"modified": 1589392036200,
 			"name": "Save Country",
 			"parameters": [],
 			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
@@ -116,7 +163,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/country",
+			"url": "{{ base_url  }}/country",
 			"_type": "request"
 		},
 		{
@@ -129,13 +176,13 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598001,
 			"method": "GET",
-			"modified": 1588508396579,
+			"modified": 1589391926567,
 			"name": "Get Country List",
 			"parameters": [
 				{
 					"id": "pair_34cbf629e8064953998b72218dd9e678",
 					"name": "language",
-					"value": "en_US"
+					"value": "pt_BR"
 				}
 			],
 			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
@@ -144,7 +191,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/country",
+			"url": "{{ base_url  }}/country",
 			"_type": "request"
 		},
 		{
@@ -157,7 +204,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598051,
 			"method": "GET",
-			"modified": 1588072561534,
+			"modified": 1589392019049,
 			"name": "Get Country by Id",
 			"parameters": [],
 			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
@@ -166,7 +213,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/country/1",
+			"url": "{{ base_url  }}/country/1",
 			"_type": "request"
 		},
 		{
@@ -179,7 +226,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082597901,
 			"method": "POST",
-			"modified": 1586197267411,
+			"modified": 1589392030176,
 			"name": "Delete Country",
 			"parameters": [],
 			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
@@ -188,7 +235,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/country/delete/2",
+			"url": "{{ base_url  }}/country/delete/2",
 			"_type": "request"
 		},
 		{
@@ -201,7 +248,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598038.5,
 			"method": "GET",
-			"modified": 1588508400781,
+			"modified": 1589392024908,
 			"name": "Get Country Single",
 			"parameters": [
 				{
@@ -221,7 +268,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/country/single",
+			"url": "{{ base_url  }}/country/single",
 			"_type": "request"
 		},
 		{
@@ -234,7 +281,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640823.375,
 			"method": "GET",
-			"modified": 1588074327949,
+			"modified": 1589392113267,
 			"name": "Get State by Id",
 			"parameters": [],
 			"parentId": "fld_021729a09b6f498181c32498eea0b852",
@@ -243,7 +290,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/state/58",
+			"url": "{{ base_url  }}/state/58",
 			"_type": "request"
 		},
 		{
@@ -256,7 +303,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640773.375,
 			"method": "GET",
-			"modified": 1588073734837,
+			"modified": 1589392119875,
 			"name": "Get State List",
 			"parameters": [
 				{
@@ -271,7 +318,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/state",
+			"url": "{{ base_url  }}/state",
 			"_type": "request"
 		},
 		{
@@ -284,7 +331,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640814,
 			"method": "GET",
-			"modified": 1588072639456,
+			"modified": 1589392070675,
 			"name": "Get Person by Id",
 			"parameters": [],
 			"parentId": "fld_6ae7108439a941b3bd150f3ddba4e426",
@@ -293,7 +340,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/person/1",
+			"url": "{{ base_url  }}/person/1",
 			"_type": "request"
 		},
 		{
@@ -315,7 +362,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640714,
 			"method": "POST",
-			"modified": 1588070994580,
+			"modified": 1589392085789,
 			"name": "Save Person",
 			"parameters": [],
 			"parentId": "fld_6ae7108439a941b3bd150f3ddba4e426",
@@ -324,7 +371,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/person",
+			"url": "{{ base_url  }}/person",
 			"_type": "request"
 		},
 		{
@@ -337,7 +384,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640764,
 			"method": "GET",
-			"modified": 1588034398367,
+			"modified": 1589392077134,
 			"name": "Get Person List",
 			"parameters": [],
 			"parentId": "fld_6ae7108439a941b3bd150f3ddba4e426",
@@ -346,7 +393,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/person",
+			"url": "{{ base_url  }}/person",
 			"_type": "request"
 		},
 		{
@@ -359,7 +406,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640664,
 			"method": "POST",
-			"modified": 1586197313006,
+			"modified": 1589392090836,
 			"name": "Delete Person",
 			"parameters": [],
 			"parentId": "fld_6ae7108439a941b3bd150f3ddba4e426",
@@ -368,7 +415,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/person/delete/10",
+			"url": "{{ base_url  }}/person/delete/10",
 			"_type": "request"
 		},
 		{
@@ -381,7 +428,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640851.5,
 			"method": "GET",
-			"modified": 1588072634066,
+			"modified": 1589392042023,
 			"name": "Get Marital Status by Id",
 			"parameters": [],
 			"parentId": "fld_c47a935bb8fd4828b42ae89712afab5f",
@@ -390,7 +437,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/maritalstatus/5",
+			"url": "{{ base_url  }}/maritalstatus/5",
 			"_type": "request"
 		},
 		{
@@ -403,7 +450,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640801.5,
 			"method": "GET",
-			"modified": 1588073217707,
+			"modified": 1589392051581,
 			"name": "Get Marital Status List",
 			"parameters": [
 				{
@@ -418,7 +465,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/maritalstatus",
+			"url": "{{ base_url  }}/maritalstatus",
 			"_type": "request"
 		},
 		{
@@ -431,7 +478,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640826.5,
 			"method": "GET",
-			"modified": 1588073189964,
+			"modified": 1589392046005,
 			"name": "Get Marital Status Single",
 			"parameters": [
 				{
@@ -451,7 +498,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/maritalstatus/single",
+			"url": "{{ base_url  }}/maritalstatus/single",
 			"_type": "request"
 		},
 		{
@@ -464,7 +511,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598026,
 			"method": "GET",
-			"modified": 1588072657255,
+			"modified": 1589392095865,
 			"name": "Get Relationship by Id",
 			"parameters": [],
 			"parentId": "fld_daa15ce1b2d74e5587bd8aea48e7422f",
@@ -473,7 +520,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/relationship/1",
+			"url": "{{ base_url  }}/relationship/1",
 			"_type": "request"
 		},
 		{
@@ -486,7 +533,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082597976,
 			"method": "GET",
-			"modified": 1588073930846,
+			"modified": 1589392107364,
 			"name": "Get Relationship List",
 			"parameters": [
 				{
@@ -501,7 +548,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/relationship",
+			"url": "{{ base_url  }}/relationship",
 			"_type": "request"
 		},
 		{
@@ -514,7 +561,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598001,
 			"method": "GET",
-			"modified": 1588074228425,
+			"modified": 1589392102652,
 			"name": "Get Relationship Single",
 			"parameters": [
 				{
@@ -534,7 +581,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:8080/relationship/single",
+			"url": "{{ base_url  }}/relationship/single",
 			"_type": "request"
 		}
 	]
