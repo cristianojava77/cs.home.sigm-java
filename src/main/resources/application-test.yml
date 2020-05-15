@@ -1,22 +1,32 @@
 logging:
   level:
-    rb.threema.cleanup: debug
-    rb.threema.cleanup.adapter.threema.service: debug
-    org.springframework.web: warn
-    org.springframework.ws: TRACE
+    root: info
+    org.springframework.web: info
+    org.springframework.ws: info
+    rb.la.forms: info
 server:
   port: 8080
 spring:
   application:
-    name: threema-cleanup
+    name: sigm
   datasource:
-    url: jdbc:h2:file:~/work/database/sigm/sigm
     driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:dbsigm
     username: sigm
     password: sigm
+    sqlScriptEncoding: UTF-8
+    hikari:
+      minimum-idle: 4
+      maximum-pool-size: 16
+      connection-timeout: 30000
+      idle-timeout: 300000
+      max-lifetime: 600000
+  devtools:
+    add-properties: true
   h2:
     console:
       enabled: true
+      path: /h2-console
   jackson:
     serialization:
       write-dates-as-timestamps: false

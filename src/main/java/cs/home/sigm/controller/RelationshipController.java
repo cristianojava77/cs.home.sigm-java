@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import cs.home.sigm.adapter.domain.RelationshipDTO;
+import cs.home.sigm.exception.InvalidRequestException;
+import cs.home.sigm.mapper.RelationshipMapper;
 import cs.home.sigm.service.RelationshipService;
 
 @RequestMapping("/relationship")
@@ -21,29 +23,27 @@ public class RelationshipController {
 	@Autowired
 	private RelationshipService service;
 
+	@Autowired
+	private RelationshipMapper mapper;
+
+	@GetMapping("/single/{code}")
+	public RelationshipDTO findSingle(@PathVariable Long code, @RequestParam String language) {
+		return mapper.map(service.findSingle(language, code).orElseThrow(() -> new InvalidRequestException("Cannot find entry based on the received code.")));
+	}
+
 	@GetMapping
-	public List<RelationshipDTO> getAll(@RequestParam String language) {
-		return service.getAll(language);
-	}
-
-	@GetMapping("/single")
-	public RelationshipDTO getSingle(@RequestParam Long code, @RequestParam String language) {
-		return service.getSingle(code, language);
-	}
-
-	@GetMapping("/{id}")
-	public RelationshipDTO getSingle(@PathVariable("id") Long id) {
-		return service.getSingle(id);
+	public List<RelationshipDTO> findAll(@RequestParam String language) {
+		return mapper.mapResponse(service.findAll(language));
 	}
 
 	@PostMapping
-	public String saveSingle(@RequestBody RelationshipDTO request) {
-		service.saveSingle(request);
-		return "Request saved.";
+	public String saveEntry(@RequestBody RelationshipDTO request) {
+		service.save(mapper.map(request));
+		return "Saved successfully";
 	}
 
 	@PostMapping("/delete/{id}")
-	public String deleteSingle(@PathVariable("id") Long id) {
+	public String deleteEntry(@PathVariable("id") Long id) {
 		service.deleteSingle(id);
 		return "Request deleted.";
 	}

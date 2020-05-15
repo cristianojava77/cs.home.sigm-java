@@ -1,14 +1,13 @@
 package cs.home.sigm.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
 
-import cs.home.sigm.adapter.domain.MaritalStatusDTO;
-import cs.home.sigm.exception.EntryNotFoundException;
-import cs.home.sigm.mapper.MaritalStatusMapper;
+import cs.home.sigm.adapter.domain.ValidLanguages;
+import cs.home.sigm.domain.MaritalStatus;
 import cs.home.sigm.repository.MaritalStatusRepository;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,36 +18,44 @@ public class MaritalStatusService {
 	@Autowired
 	private MaritalStatusRepository repository;
 
-	@Autowired
-	private MaritalStatusMapper mapper;
+	/**
+	 * Load a single entry based on its language and code.
+	 *
+	 * @param  language The language to be used.
+	 * @param  code     The code to be located.
+	 * @return          An <code>Optional</code> containing the entry, or null, if not found.
+	 */
+	public Optional<MaritalStatus> findSingle(String language, Long code) {
+		log.info("Loading entry based on language: {}, and code: {}", language, code);
+		return repository.findAllByCodeAndLanguage(code, language).stream().findFirst();
+	}
 
-	public List<MaritalStatusDTO> getAll(String language) {
-		log.info("Listing all entries for language: {}.", language);
-		if (StringUtils.isEmpty(language)) {
-			return mapper.mapResponse(repository.findAll());
+	/**
+	 * If a language filter is provided, it will only load the entries for that particular language. Otherwise, all entries will be loaded.
+	 *
+	 * @return All entries currently in the database for the request entity.
+	 */
+	public List<MaritalStatus> findAll(String language) {
+		log.info("Loading all entries. Language: {}.", language);
+		if (ValidLanguages.isValid(language)) {
+			return repository.findAllByLanguageOrderByTitle(ValidLanguages.parseLanguage(language));
+		} else {
+			return repository.findAll();
 		}
-		return mapper.mapResponse(repository.findAllByLanguageOrderByTitle(language));
 	}
 
-	public MaritalStatusDTO getSingle(Long code, String language) {
-		log.info("Loading a single entry based on code and language. code: {}, language: {}", code, language);
-		return mapper.map(repository.findAllByCodeAndLanguage(code, language).stream().findFirst()
-				.orElseThrow(() -> new EntryNotFoundException("Cannot find any entry for code: " + code + " and language: " + language)));
-	}
-
-	public MaritalStatusDTO getSingle(Long id) {
-		log.info("Loading a single entry: {}", id);
-		return mapper.map(repository.getOne(id));
-	}
-
-	public void saveSingle(MaritalStatusDTO request) {
-		log.info("Saving a new entry based on request: {}", request);
-		repository.save(mapper.map(request));
+	/**
+	 * Save the received entry into the database.
+	 *
+	 * @param request The entry to be persisted.
+	 */
+	public void save(MaritalStatus request) {
+		log.info("Persisting the entry: {}", request);
+		repository.save(request);
 	}
 
 	public void deleteSingle(Long id) {
 		log.info("Deleting the entry {}.", id);
 		repository.deleteById(id);
 	}
-
 }
