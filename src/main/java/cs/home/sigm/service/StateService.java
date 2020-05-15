@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import cs.home.sigm.adapter.domain.StateDTO;
-import cs.home.sigm.mapper.StateMapper;
+import cs.home.sigm.domain.State;
 import cs.home.sigm.repository.StateRepository;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,30 +16,26 @@ public class StateService {
 	@Autowired
 	private StateRepository repository;
 
-	@Autowired
-	private StateMapper mapper;
-
-	public List<StateDTO> getAll(Long countrycode) {
+	/**
+	 * If a country code filter is provided, it will only load the states for that particular country. Otherwise, all entries will be loaded.
+	 *
+	 * @param  countrycode The code of the Country to filter states.
+	 * @return             A list of States of the Country filtered, or all states if no filter is provided.
+	 */
+	public List<State> findAll(Long countrycode) {
 		log.info("Listing all states for country code: {}.", countrycode);
-		if (countrycode != null) {
-			return mapper.mapResponse(repository.findAllByCountrycodeOrderByTitle(countrycode));
-		}
-		return mapper.mapResponse(repository.findAll());
+		return repository.findAllByCountrycodeOrderByTitle(countrycode);
 	}
 
-	public StateDTO getSingle(Long id) {
+	/**
+	 * Load a single State based on its Id.
+	 *
+	 * @param  id The ID of the state to be loaded.
+	 * @return
+	 */
+	public State getOne(Long id) {
 		log.info("Loading a single entry: {}", id);
-		return mapper.map(repository.getOne(id));
-	}
-
-	public void saveSingle(StateDTO request) {
-		log.info("Saving a new entry based on request: {}", request);
-		repository.save(mapper.map(request));
-	}
-
-	public void deleteSingle(Long id) {
-		log.info("Deleting the entry {}.", id);
-		repository.deleteById(id);
+		return repository.getOne(id);
 	}
 
 }

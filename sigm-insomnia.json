@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2020-05-13T21:44:25.377Z",
+	"__export_date": "2020-05-15T04:06:06.630Z",
 	"__export_source": "insomnia.desktop.app:v5.16.6",
 	"resources": [
 		{
@@ -176,7 +176,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598001,
 			"method": "GET",
-			"modified": 1589391926567,
+			"modified": 1589512431432,
 			"name": "Get Country List",
 			"parameters": [
 				{
@@ -195,28 +195,6 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_e18bc439f0e44c8c9e641a99ab9c6b5c",
-			"authentication": {},
-			"body": {},
-			"created": 1586182714707,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1586082598051,
-			"method": "GET",
-			"modified": 1589392019049,
-			"name": "Get Country by Id",
-			"parameters": [],
-			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/country/1",
-			"_type": "request"
-		},
-		{
 			"_id": "req_2511292d61b946ab929aeba0e9621c9a",
 			"authentication": {},
 			"body": {},
@@ -226,7 +204,7 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082597901,
 			"method": "POST",
-			"modified": 1589392030176,
+			"modified": 1589513708213,
 			"name": "Delete Country",
 			"parameters": [],
 			"parentId": "fld_7641ab8672674017b5c0495f81e4fa3d",
@@ -235,7 +213,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/country/delete/2",
+			"url": "{{ base_url  }}/country/delete/5",
 			"_type": "request"
 		},
 		{
@@ -248,14 +226,9 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598038.5,
 			"method": "GET",
-			"modified": 1589392024908,
+			"modified": 1589511275779,
 			"name": "Get Country Single",
 			"parameters": [
-				{
-					"id": "pair_5596eed77be64bad9235f7423f5cb2ca",
-					"name": "code",
-					"value": "1"
-				},
 				{
 					"id": "pair_8c91a82cf4f549478f885a1b1cb58652",
 					"name": "language",
@@ -268,7 +241,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/country/single",
+			"url": "{{ base_url  }}/country/single/1",
 			"_type": "request"
 		},
 		{
@@ -419,28 +392,6 @@
 			"_type": "request"
 		},
 		{
-			"_id": "req_5e06f756111f43f8a6c41dcdea2493d0",
-			"authentication": {},
-			"body": {},
-			"created": 1586196985723,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1585738640851.5,
-			"method": "GET",
-			"modified": 1589392042023,
-			"name": "Get Marital Status by Id",
-			"parameters": [],
-			"parentId": "fld_c47a935bb8fd4828b42ae89712afab5f",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/maritalstatus/5",
-			"_type": "request"
-		},
-		{
 			"_id": "req_9fbc2509b98145dcb9c09b7a68d807f6",
 			"authentication": {},
 			"body": {},
@@ -478,14 +429,9 @@
 			"isPrivate": false,
 			"metaSortKey": -1585738640826.5,
 			"method": "GET",
-			"modified": 1589392046005,
+			"modified": 1589511688783,
 			"name": "Get Marital Status Single",
 			"parameters": [
-				{
-					"id": "pair_5596eed77be64bad9235f7423f5cb2ca",
-					"name": "code",
-					"value": "5"
-				},
 				{
 					"id": "pair_8c91a82cf4f549478f885a1b1cb58652",
 					"name": "language",
@@ -498,29 +444,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/maritalstatus/single",
-			"_type": "request"
-		},
-		{
-			"_id": "req_898270fd2f21455298dae6c3663bb69d",
-			"authentication": {},
-			"body": {},
-			"created": 1588034346596,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1586082598026,
-			"method": "GET",
-			"modified": 1589392095865,
-			"name": "Get Relationship by Id",
-			"parameters": [],
-			"parentId": "fld_daa15ce1b2d74e5587bd8aea48e7422f",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/relationship/1",
+			"url": "{{ base_url  }}/maritalstatus/single/1",
 			"_type": "request"
 		},
 		{
@@ -561,14 +485,9 @@
 			"isPrivate": false,
 			"metaSortKey": -1586082598001,
 			"method": "GET",
-			"modified": 1589392102652,
+			"modified": 1589511764486,
 			"name": "Get Relationship Single",
 			"parameters": [
-				{
-					"id": "pair_5596eed77be64bad9235f7423f5cb2ca",
-					"name": "code",
-					"value": "1"
-				},
 				{
 					"id": "pair_8c91a82cf4f549478f885a1b1cb58652",
 					"name": "language",
@@ -581,7 +500,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "{{ base_url  }}/relationship/single",
+			"url": "{{ base_url  }}/relationship/single/1",
 			"_type": "request"
 		}
 	]

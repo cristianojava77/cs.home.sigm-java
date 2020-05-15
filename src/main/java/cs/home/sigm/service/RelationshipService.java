@@ -44,19 +44,4 @@ public class RelationshipService {
 		}
 	}
 
-	/**
-	 * Save the received entry into the database.
-	 *
-	 * @param request The entry to be persisted.
-	 */
-	public void save(Relationship request) {
-		log.info("Persisting the entry: {}", request);
-		repository.save(request);
-	}
-
-	public void deleteSingle(Long id) {
-		log.info("Deleting the entry {}.", id);
-		repository.deleteById(id);
-	}
-
 }

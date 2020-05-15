@@ -1,3 +1,14 @@
+-- cleaning up database
+delete from country;
+ALTER TABLE country ALTER COLUMN id RESTART WITH 1;
+delete from maritalstatus;
+ALTER TABLE maritalstatus ALTER COLUMN id RESTART WITH 1;
+delete from relationship;
+ALTER TABLE relationship ALTER COLUMN id RESTART WITH 1;
+delete from state;
+ALTER TABLE state ALTER COLUMN id RESTART WITH 1;
+
+-- setting up data
 insert into country (id, code, title, language) values
 (null, 1, 'Brasil', 'pt_BR'),
 (null, 2, 'Argentina', 'pt_BR'),
@@ -68,17 +79,17 @@ insert into state (id, countrycode, title, abbreviation) values
 (null, 1, 'Mato Grosso do Sul', 'MS'),
 (null, 1, 'Minas Gerais', 'MG'),
 (null, 1, 'Pará', 'PA'),
-(null, 1, 'Paraíba ', 'PB'),
+(null, 1, 'Paraíba', 'PB'),
 (null, 1, 'Paraná', 'PR'),
 (null, 1, 'Pernambuco', 'PE'),
 (null, 1, 'Piauí', 'PI'),
 (null, 1, 'Rio de Janeiro', 'RJ'),
 (null, 1, 'Rio Grande do Norte', 'RN'),
-(null, 1, 'Rio Grande do Sul ', 'RS'),
+(null, 1, 'Rio Grande do Sul', 'RS'),
 (null, 1, 'Rondônia', 'RO'),
 (null, 1, 'Roraima', 'RR'),
-(null, 1, 'Santa Catarina ', 'SC'),
-(null, 1, 'São Paulo ', 'SP'),
+(null, 1, 'Santa Catarina', 'SC'),
+(null, 1, 'São Paulo', 'SP'),
 (null, 1, 'Sergipe', 'SE'),
 (null, 1, 'Tocantins', 'TO'),
 

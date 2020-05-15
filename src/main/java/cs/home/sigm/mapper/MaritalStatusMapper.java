@@ -11,6 +11,7 @@ import cs.home.sigm.domain.MaritalStatus;
 @Service
 public class MaritalStatusMapper {
 
+	/*
 	public MaritalStatus map(MaritalStatusDTO request) {
 		// @formatter:off
 		return MaritalStatus.builder()
@@ -21,6 +22,7 @@ public class MaritalStatusMapper {
 				.build();
 		// @formatter:on
 	}
+	*/
 
 	public List<MaritalStatusDTO> mapResponse(List<MaritalStatus> lst) {
 		List<MaritalStatusDTO> response = new ArrayList<>();
@@ -41,6 +43,7 @@ public class MaritalStatusMapper {
 		// @formatter:on
 	}
 
+	/*
 	public List<MaritalStatus> mapRequest(List<MaritalStatusDTO> lst) {
 		List<MaritalStatus> response = new ArrayList<>();
 		for (MaritalStatusDTO cur : lst) {
@@ -48,5 +51,6 @@ public class MaritalStatusMapper {
 		}
 		return response;
 	}
+	*/
 
 }

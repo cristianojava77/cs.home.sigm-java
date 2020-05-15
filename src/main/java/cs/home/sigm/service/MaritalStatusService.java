@@ -33,7 +33,8 @@ public class MaritalStatusService {
 	/**
 	 * If a language filter is provided, it will only load the entries for that particular language. Otherwise, all entries will be loaded.
 	 *
-	 * @return All entries currently in the database for the request entity.
+	 * @param  language The language to be filtered.
+	 * @return          All entries currently in the database for the request entity.
 	 */
 	public List<MaritalStatus> findAll(String language) {
 		log.info("Loading all entries. Language: {}.", language);
@@ -44,18 +45,4 @@ public class MaritalStatusService {
 		}
 	}
 
-	/**
-	 * Save the received entry into the database.
-	 *
-	 * @param request The entry to be persisted.
-	 */
-	public void save(MaritalStatus request) {
-		log.info("Persisting the entry: {}", request);
-		repository.save(request);
-	}
-
-	public void deleteSingle(Long id) {
-		log.info("Deleting the entry {}.", id);
-		repository.deleteById(id);
-	}
 }

@@ -11,6 +11,7 @@ import cs.home.sigm.domain.State;
 @Service
 public class StateMapper {
 
+	/*
 	public State map(StateDTO request) {
 		// @formatter:off
 		return State.builder()
@@ -22,6 +23,7 @@ public class StateMapper {
 				.build();
 		// @formatter:on
 	}
+	*/
 
 	public List<StateDTO> mapResponse(List<State> lst) {
 		List<StateDTO> response = new ArrayList<>();
@@ -43,6 +45,7 @@ public class StateMapper {
 		// @formatter:on
 	}
 
+	/*
 	public List<State> mapRequest(List<StateDTO> lst) {
 		List<State> response = new ArrayList<>();
 		for (StateDTO cur : lst) {
@@ -50,5 +53,6 @@ public class StateMapper {
 		}
 		return response;
 	}
+	*/
 
 }

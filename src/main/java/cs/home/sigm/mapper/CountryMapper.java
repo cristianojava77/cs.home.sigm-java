@@ -43,6 +43,7 @@ public class CountryMapper {
 		// @formatter:on
 	}
 
+	/*
 	public List<Country> mapRequest(List<CountryDTO> lst) {
 		List<Country> response = new ArrayList<>();
 		for (CountryDTO cur : lst) {
@@ -50,5 +51,6 @@ public class CountryMapper {
 		}
 		return response;
 	}
+	*/
 
 }
