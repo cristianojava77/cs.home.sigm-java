@@ -14,6 +14,7 @@ public class CountryMapper {
 	public Country map(CountryDTO request) {
 		// @formatter:off
 		return Country.builder()
+				.abbreviation(request.getAbbreviation())
 				.active(request.getActive())
 				.code(request.getCode())
 				.id(request.getId())
@@ -34,6 +35,7 @@ public class CountryMapper {
 	public CountryDTO map(Country domain) {
 		// @// @formatter:off
 		return CountryDTO.builder()
+				.abbreviation(domain.getAbbreviation())
 				.active(domain.getActive())
 				.code(domain.getCode())
 				.id(domain.getId())

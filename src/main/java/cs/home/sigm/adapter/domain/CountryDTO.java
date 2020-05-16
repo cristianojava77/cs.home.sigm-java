@@ -27,6 +27,8 @@ public class CountryDTO implements Serializable {
 
 	private String language;
 
+	private String abbreviation;
+
 	private Boolean active;
 
 }

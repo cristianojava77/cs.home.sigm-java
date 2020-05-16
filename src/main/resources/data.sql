@@ -1,26 +1,29 @@
 -- cleaning up database
 delete from country;
 ALTER TABLE country ALTER COLUMN id RESTART WITH 1;
+
 delete from maritalstatus;
 ALTER TABLE maritalstatus ALTER COLUMN id RESTART WITH 1;
+
 delete from relationship;
 ALTER TABLE relationship ALTER COLUMN id RESTART WITH 1;
+
 delete from state;
 ALTER TABLE state ALTER COLUMN id RESTART WITH 1;
 
 -- setting up data
-insert into country (id, code, title, language) values
-(null, 1, 'Brasil', 'pt_BR'),
-(null, 2, 'Argentina', 'pt_BR'),
-(null, 3, 'Estados Unidos', 'pt_BR'),
+insert into country (id, code, language, title, abbreviation) values
+(null, 1, 'pt_BR', 'Brasil', 'BR'),
+(null, 2, 'pt_BR', 'Argentina', 'AR'),
+(null, 3, 'pt_BR', 'Estados Unidos', 'US'),
 
-(null, 1, 'Brasil', 'es_ES'),
-(null, 2, 'Argentina', 'es_ES'),
-(null, 3, 'Estados Unidos', 'es_ES'),
+(null, 1, 'es_ES', 'Brasil', 'BR'),
+(null, 2, 'es_ES', 'Argentina', 'AR'),
+(null, 3, 'es_ES', 'Estados Unidos', 'US'),
 
-(null, 1, 'Brazil', 'en_US'),
-(null, 2, 'Argentina', 'en_US'),
-(null, 3, 'United States', 'en_US');
+(null, 1, 'en_US', 'Brasil', 'BR'),
+(null, 2, 'en_US', 'Argentina', 'AR'),
+(null, 3, 'en_US', 'Estados Unidos', 'US'),
 
 insert into maritalstatus (id, code, title, language) values
 (null, 1, 'Solteiro(a)', 'pt_BR'),

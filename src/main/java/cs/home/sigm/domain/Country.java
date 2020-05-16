@@ -40,6 +40,9 @@ public class Country implements Serializable {
 	@NotBlank(message = "Language is mandatory")
 	private String language;
 
+	@NotBlank(message = "Abbreviation is mandatory")
+	private String abbreviation;
+
 	@Builder.Default
 	private Boolean active = true;
 
