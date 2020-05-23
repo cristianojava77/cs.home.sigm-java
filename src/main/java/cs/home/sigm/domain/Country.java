@@ -22,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "country")
+@Table(name = "tbl_country")
 public class Country implements Serializable {
 
 	private static final long serialVersionUID = 2065829407246890806L;

@@ -22,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "relationship")
+@Table(name = "tbl_relationship")
 public class Relationship implements Serializable {
 
 	private static final long serialVersionUID = -8166222891632191286L;

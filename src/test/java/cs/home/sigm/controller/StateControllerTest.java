@@ -2,42 +2,26 @@ package cs.home.sigm.controller;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 
+import cs.home.sigm.SIGMApplicationTestSetup;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@AutoConfigureMockMvc
-@ActiveProfiles("test")
-// @Sql("/test/data.sql")
-public class StateControllerTest {
+public class StateControllerTest extends SIGMApplicationTestSetup {
 
 	private static final String BASE_URL = "/state";
-
-	@Autowired
-	private MockMvc mvc;
-
-	@Test
-	public void contextLoads() {
-		log.info("Validating context before start testing.");
-		assertNotNull(mvc);
-	}
 
 	@Test
 	public void shouldLoadAllStatesForBrazil() throws Exception {
@@ -54,7 +38,7 @@ public class StateControllerTest {
 	@Test
 	public void shouldGetSaoPaulo() throws Exception {
 		log.info("|:: TEST ::| >>> Should get Sao Paulo.");
-		getOne(25L).andReturn(); // andExpect(status().isOk()).andExpect(jsonPath("$.title", is("São Paulo")));
+		getOne(25L).andExpect(status().isOk()).andExpect(jsonPath("$.title", is("São Paulo")));
 	}
 
 	@Test

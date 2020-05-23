@@ -23,7 +23,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "person", indexes = { @Index(columnList = "name", name = "idx_person_name") })
+@Table(name = "tbl_person", indexes = { @Index(columnList = "name", name = "idx_person_name") })
 public class Person implements Serializable {
 
 	private static final long serialVersionUID = -1926509930607287585L;

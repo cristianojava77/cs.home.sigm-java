@@ -10,10 +10,10 @@ spring:
   application:
     name: sigm
   datasource:
-    driverClassName: org.h2.Driver
-    url: jdbc:h2:file:~/work/h2/forms/dbsigm
-    username: sigm
-    password: sigm
+    driverClassName: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/dbsigm
+    username: admin
+    password: admin
     sqlScriptEncoding: UTF-8
     hikari:
       minimum-idle: 4
@@ -23,15 +23,13 @@ spring:
       max-lifetime: 600000
   devtools:
     add-properties: true
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
   jackson:
     serialization:
       write-dates-as-timestamps: false
       fail-on-empty-beans: false
   jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+    open-in-view: false
+
+    
