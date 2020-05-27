@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.ManyToOne;
@@ -32,11 +33,11 @@ public class Relation implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@MapsId("person_id")
 	private Person person;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.EAGER)
 	@MapsId("relative_id")
 	private Person relative;
 
