@@ -1,15 +1,15 @@
 -- cleaning up database
 delete from tbl_country;
-ALTER TABLE tbl_country ALTER COLUMN id RESTART WITH 1;
-
 delete from tbl_maritalstatus;
-ALTER TABLE tbl_maritalstatus ALTER COLUMN id RESTART WITH 1;
-
 delete from tbl_relationship;
-ALTER TABLE tbl_relationship ALTER COLUMN id RESTART WITH 1;
-
 delete from tbl_state;
+
+-- reset id generators (h2 only)
+ALTER TABLE tbl_country ALTER COLUMN id RESTART WITH 1;
+ALTER TABLE tbl_maritalstatus ALTER COLUMN id RESTART WITH 1;
+ALTER TABLE tbl_relationship ALTER COLUMN id RESTART WITH 1;
 ALTER TABLE tbl_state ALTER COLUMN id RESTART WITH 1;
+
 
 -- setting up data
 insert into tbl_country (code, language, title, abbreviation) values

@@ -1,6 +1,6 @@
 logging:
   level:
-    root: warn
+    root: info
     org.springframework.web: info
     org.springframework.ws: info
     rb.la.forms: info

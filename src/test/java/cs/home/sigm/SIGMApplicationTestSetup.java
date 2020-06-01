@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @ActiveProfiles("test")
 @AutoConfigureMockMvc
-@Sql("/sql/data.sql")
+@Sql("/sql/data-h2.sql")
 public abstract class SIGMApplicationTestSetup {
 
 	@Autowired
@@ -23,7 +23,6 @@ public abstract class SIGMApplicationTestSetup {
 
 	@Test
 	public void contextLoads() {
-		// log.info("Validating context before start testing.");
 		assertNotNull(mvc);
 	}
 
